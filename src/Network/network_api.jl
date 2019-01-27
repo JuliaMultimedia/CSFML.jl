@@ -322,7 +322,7 @@ function sfPacket_readString(packet, string)
 end
 
 function sfPacket_readWideString(packet, string)
-    ccall((:sfPacket_readWideString, libcsfml_network), Cvoid, (Ptr{sfPacket}, Ptr{wchar_t}), packet, string)
+    ccall((:sfPacket_readWideString, libcsfml_network), Cvoid, (Ptr{sfPacket}, Ptr{Cwchar_t}), packet, string)
 end
 
 function sfPacket_writeBool(packet, arg1)
@@ -366,7 +366,7 @@ function sfPacket_writeString(packet, string)
 end
 
 function sfPacket_writeWideString(packet, string)
-    ccall((:sfPacket_writeWideString, libcsfml_network), Cvoid, (Ptr{sfPacket}, Ptr{wchar_t}), packet, string)
+    ccall((:sfPacket_writeWideString, libcsfml_network), Cvoid, (Ptr{sfPacket}, Ptr{Cwchar_t}), packet, string)
 end
 # Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/SocketSelector.h
 # Automatically generated using Clang.jl

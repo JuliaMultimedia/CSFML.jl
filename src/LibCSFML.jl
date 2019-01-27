@@ -26,15 +26,14 @@ include(joinpath(@__DIR__, "System", "system_api.jl"))
 include(joinpath(@__DIR__, "Audio", "audio_common.jl"))
 include(joinpath(@__DIR__, "Audio", "audio_api.jl"))
 
+include(joinpath(@__DIR__, "Window", "window_common.jl"))
+include(joinpath(@__DIR__, "Window", "window_api.jl"))
+
 include(joinpath(@__DIR__, "Graphics", "graphics_common.jl"))
 include(joinpath(@__DIR__, "Graphics", "graphics_api.jl"))
 
 include(joinpath(@__DIR__, "Network", "network_common.jl"))
 include(joinpath(@__DIR__, "Network", "network_api.jl"))
-
-include(joinpath(@__DIR__, "Window", "window_common.jl"))
-include(joinpath(@__DIR__, "Window", "windows_api.jl"))
-
 
 # export everything
 foreach(names(@__MODULE__, all=true)) do s

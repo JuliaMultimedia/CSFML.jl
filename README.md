@@ -12,7 +12,6 @@ This package is not officially registered yet and only support macOS and Windows
 
 ```julia
 pkg> dev https://github.com/Gnimuc/LibCSFML.jl.git
-pkg> build
 ```
 ## Quick start
 

@@ -20,7 +20,7 @@ sfText_setString(text, "Hello SFML")
 sfText_setFont(text, font)
 sfText_setCharacterSize(text, 50)
 
-music = sfMusic_createFromFile(joinpath(@__DIR__, "music.ogg"))
+music = sfMusic_createFromFile(joinpath(@__DIR__, "Chrono_Trigger.ogg"))
 @assert music != C_NULL
 
 sfMusic_play(music)

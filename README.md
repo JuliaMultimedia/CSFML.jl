@@ -7,12 +7,23 @@
 Julia wrapper for [CSFML](https://github.com/SFML/CSFML), the Official binding of [SFML](https://github.com/SFML/SFML) for C. SFML is a simple, fast, cross-platform and object-oriented multimedia API. It provides access to windowing, graphics, audio and network. The Julia bindings in this repo are auto-generated using [Clang.jl](https://github.com/JuliaInterop/Clang.jl). You could refer to [CSFML's docs](http://transit.iut2.upmf-grenoble.fr/doc/libcsfml-doc/html/index.htm) for how to use those bindings.
 
 ## Installation
-
-This package is not officially registered yet and only support macOS and Windows for now.
-
 ```julia
 pkg> dev https://github.com/Gnimuc/LibCSFML.jl.git
 ```
+On Linux, you might need to install the following dependencies firstly:
+
+- openal
+- pthread
+- opengl
+- xlib
+- xrandr
+- udev
+- freetype
+- flac
+- vorbis
+
+Should you encountered any installation problems, feel free to file an issue.
+
 ## Quick start
 
 ```julia

@@ -1,7 +1,7 @@
 # LibCSFML
 
 [![Build Status](https://travis-ci.com/JuliaMultimedia/LibCSFML.jl.svg?branch=master)](https://travis-ci.com/JuliaMultimedia/LibCSFML.jl)
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/JuliaMultimedia/LibCSFML.jl?svg=true)](https://ci.appveyor.com/project/JuliaMultimedia/LibCSFML-jl)
+[![Build status](https://ci.appveyor.com/api/projects/status/qvki9lqu1d5q6nm1?svg=true)](https://ci.appveyor.com/project/JuliaMultimedia/libcsfml-jl-38st2)
 
 
 Julia wrapper for [CSFML](https://github.com/SFML/CSFML), the official binding of [SFML](https://github.com/SFML/SFML) for C. SFML is a simple, fast, cross-platform and object-oriented multimedia API. It provides access to windowing, graphics, audio and network. The Julia bindings in this repo are auto-generated using [Clang.jl](https://github.com/JuliaInterop/Clang.jl). You could refer to [CSFML's docs](http://transit.iut2.upmf-grenoble.fr/doc/libcsfml-doc/html/index.htm) for how to use those bindings.

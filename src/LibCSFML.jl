@@ -5,7 +5,7 @@ import Libdl
 # Load in `deps.jl`, complaining if it does not exist
 const depsjl_path = joinpath(@__DIR__, "..", "deps", "deps.jl")
 if !isfile(depsjl_path)
-    error("LibCSFML was not built properly. Please run Pkg.build(\"LibCSFML\").")
+    error("CSFML was not built properly. Please run Pkg.build(\"CSFML\").")
 end
 include(depsjl_path)
 # Module initialization function

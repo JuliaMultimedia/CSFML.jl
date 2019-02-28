@@ -1,5 +1,5 @@
 # http://transit.iut2.upmf-grenoble.fr/doc/libcsfml-doc/html/
-using CSFML.ibCSFML
+using CSFML.LibCSFML
 
 mode = sfVideoMode(1250, 1250, 32)
 

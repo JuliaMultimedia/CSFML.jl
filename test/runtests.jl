@@ -1,6 +1,6 @@
-using LibCSFML
+using CSFML
 using Test
 
-@testset "LibCSFML.jl" begin
+@testset "CSFML.jl" begin
     # Write your own tests here.
 end

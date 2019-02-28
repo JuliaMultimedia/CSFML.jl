@@ -1,14 +1,14 @@
-# LibCSFML
+# CSFML
 
-[![Build Status](https://travis-ci.com/JuliaMultimedia/LibCSFML.jl.svg?branch=master)](https://travis-ci.com/JuliaMultimedia/LibCSFML.jl)
-[![Build status](https://ci.appveyor.com/api/projects/status/qvki9lqu1d5q6nm1?svg=true)](https://ci.appveyor.com/project/JuliaMultimedia/libcsfml-jl-38st2)
+[![Build Status](https://travis-ci.com/JuliaMultimedia/CSFML.jl.svg?branch=master)](https://travis-ci.com/JuliaMultimedia/CSFML.jl)
+[![Build status](https://ci.appveyor.com/api/projects/status/qvki9lqu1d5q6nm1?svg=true)](https://ci.appveyor.com/project/JuliaMultimedia/csfml-jl-38st2)
 
 
 Julia wrapper for [CSFML](https://github.com/SFML/CSFML), the official binding of [SFML](https://github.com/SFML/SFML) for C. SFML is a simple, fast, cross-platform and object-oriented multimedia API. It provides access to windowing, graphics, audio and network. The Julia bindings in this repo are auto-generated using [Clang.jl](https://github.com/JuliaInterop/Clang.jl). You could refer to [CSFML's docs](http://transit.iut2.upmf-grenoble.fr/doc/libcsfml-doc/html/index.htm) for how to use those bindings.
 
 ## Installation
 ```julia
-pkg> dev https://github.com/Gnimuc/LibCSFML.jl.git
+pkg> add CSFML
 ```
 On Linux, you might need to install the following dependencies firstly:
 
@@ -28,7 +28,7 @@ Should you encountered any installation problems, feel free to file an issue.
 
 ```julia
 # http://transit.iut2.upmf-grenoble.fr/doc/libcsfml-doc/html/
-using LibCSFML
+using CSFML.LibCSFML
 
 mode = sfVideoMode(1250, 1250, 32)
 

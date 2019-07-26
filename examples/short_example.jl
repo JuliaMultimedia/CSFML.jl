@@ -25,13 +25,24 @@ music = sfMusic_createFromFile(joinpath(@__DIR__, "Chrono_Trigger.ogg"))
 
 sfMusic_play(music)
 
-event_ref = Ref(sfEvent(sfEvtClosed))
+event_ref = Ref{sfEvent}()
 
 while Bool(sfRenderWindow_isOpen(window))
     # process events
     while Bool(sfRenderWindow_pollEvent(window, event_ref))
         # close window : exit
-        event_ref.x.type == sfEvtClosed && sfRenderWindow_close(window)
+        event_ref[].type == sfEvtClosed && sfRenderWindow_close(window)
+        event_ref[].type == sfEvtResized && println("Trigger sfEvtResized.")
+        event_ref[].type == sfEvtLostFocus && println("Trigger sfEvtLostFocus.")
+        event_ref[].type == sfEvtGainedFocus && println("Trigger sfEvtGainedFocus.")
+        event_ref[].type == sfEvtTextEntered && println("Trigger sfEvtTextEntered: $(event_ref[].text.unicode)")
+        event_ref[].type == sfEvtKeyPressed && println("Trigger sfEvtKeyPressed: $(event_ref[].key.code)")
+        event_ref[].type == sfEvtKeyReleased && println("Trigger sfEvtKeyReleased: $(event_ref[].key.code)")
+        event_ref[].type == sfEvtMouseWheelMoved && println("Trigger sfEvtMouseWheelMoved: $(event_ref[].mouseWheel.sfMouseVerticalWheel)")
+        event_ref[].type == sfEvtMouseWheelScrolled && println("Trigger sfEvtMouseWheelScrolled: $(event_ref[].mouseWheel.sfMouseVerticalWheel)")
+        event_ref[].type == sfEvtMouseButtonPressed && println("Trigger sfEvtMouseButtonPressed: $(event_ref[].mouseButton.button)")
+        event_ref[].type == sfEvtMouseButtonReleased && println("Trigger sfEvtMouseButtonReleased: $(event_ref[].mouseButton.x), $(event_ref[].mouseButton.y)")
+        event_ref[].type == sfEvtMouseMoved && println("Trigger sfEvtMouseMoved: $(event_ref[].mouseMove.x), $(event_ref[].mouseMove.y)")
     end
     # clear the screen
     sfRenderWindow_clear(window, sfColor_fromRGBA(0,0,0,1))

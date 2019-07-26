@@ -1,7 +1,7 @@
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Clipboard.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Clipboard.h
 # Automatically generated using Clang.jl
 
 
@@ -20,7 +20,7 @@ end
 function sfClipboard_setUnicodeString(text)
     ccall((:sfClipboard_setUnicodeString, libcsfml_window), Cvoid, (Ptr{sfUint32},), text)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Context.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Context.h
 # Automatically generated using Clang.jl
 
 
@@ -43,7 +43,7 @@ end
 function sfContext_getActiveContextId()
     ccall((:sfContext_getActiveContextId, libcsfml_window), sfUint64, ())
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Cursor.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Cursor.h
 # Automatically generated using Clang.jl
 
 
@@ -58,13 +58,13 @@ end
 function sfCursor_destroy(cursor)
     ccall((:sfCursor_destroy, libcsfml_window), Cvoid, (Ptr{sfCursor},), cursor)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Event.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Event.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Export.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Export.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Joystick.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Joystick.h
 # Automatically generated using Clang.jl
 
 
@@ -95,10 +95,10 @@ end
 function sfJoystick_update()
     ccall((:sfJoystick_update, libcsfml_window), Cvoid, ())
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/JoystickIdentification.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/JoystickIdentification.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Keyboard.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Keyboard.h
 # Automatically generated using Clang.jl
 
 
@@ -109,7 +109,7 @@ end
 function sfKeyboard_setVirtualKeyboardVisible(visible)
     ccall((:sfKeyboard_setVirtualKeyboardVisible, libcsfml_window), Cvoid, (sfBool,), visible)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Mouse.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Mouse.h
 # Automatically generated using Clang.jl
 
 
@@ -124,7 +124,7 @@ end
 function sfMouse_setPosition(position, relativeTo)
     ccall((:sfMouse_setPosition, libcsfml_window), Cvoid, (sfVector2i, Ptr{sfWindow}), position, relativeTo)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Sensor.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Sensor.h
 # Automatically generated using Clang.jl
 
 
@@ -139,7 +139,7 @@ end
 function sfSensor_getValue(sensor)
     ccall((:sfSensor_getValue, libcsfml_window), sfVector3f, (sfSensorType,), sensor)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Touch.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Touch.h
 # Automatically generated using Clang.jl
 
 
@@ -150,10 +150,10 @@ end
 function sfTouch_getPosition(finger, relativeTo)
     ccall((:sfTouch_getPosition, libcsfml_window), sfVector2i, (UInt32, Ptr{sfWindow}), finger, relativeTo)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Types.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Types.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/VideoMode.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/VideoMode.h
 # Automatically generated using Clang.jl
 
 
@@ -168,7 +168,7 @@ end
 function sfVideoMode_isValid(mode)
     ccall((:sfVideoMode_isValid, libcsfml_window), sfBool, (sfVideoMode,), mode)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/Window.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/Window.h
 # Automatically generated using Clang.jl
 
 
@@ -287,6 +287,6 @@ end
 function sfWindow_getSystemHandle(window)
     ccall((:sfWindow_getSystemHandle, libcsfml_window), sfWindowHandle, (Ptr{sfWindow},), window)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Window/WindowHandle.h
+# Julia wrapper for header: /Users/gnimuc/.julia/dev/LibCSFML/gen/../deps/usr/include/SFML/Window/WindowHandle.h
 # Automatically generated using Clang.jl
 

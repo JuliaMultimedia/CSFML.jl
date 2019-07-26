@@ -264,6 +264,46 @@ end
 
 struct sfEvent
     type::sfEventType
+    data::NTuple{20,UInt8}
+end
+
+@inline function unpack_union(::Type{T}, obj::S) where {T,S}
+    ref = Ref{S}(obj)
+    GC.@preserve ref begin
+        ptr = Base.unsafe_convert(Ptr{Cvoid}, ref)
+        target = unsafe_load(Ptr{T}(ptr))
+    end
+    return target
+end
+
+function Base.getproperty(obj::sfEvent, sym::Symbol)
+    if sym === :type
+        return getfield(obj, :type)
+    elseif sym === :size
+        return unpack_union(sfSizeEvent, obj)
+    elseif sym === :key
+        return unpack_union(sfKeyEvent, obj)
+    elseif sym === :text
+        return unpack_union(sfTextEvent, obj)
+    elseif sym === :mouseMove
+        return unpack_union(sfMouseMoveEvent, obj)
+    elseif sym === :mouseButton
+        return unpack_union(sfMouseButtonEvent, obj)
+    elseif sym === :mouseWheel
+        return unpack_union(sfMouseWheelEvent, obj)
+    elseif sym === :mouseWheelScroll
+        return unpack_union(sfMouseWheelScrollEvent, obj)
+    elseif sym === :joystickMove
+        return unpack_union(sfJoystickMoveEvent, obj)
+    elseif sym === :joystickButton
+        return unpack_union(sfJoystickButtonEvent, obj)
+    elseif sym === :joystickConnect
+        return unpack_union(sfJoystickConnectEvent, obj)
+    elseif sym === :touch
+        return unpack_union(sfTouchEvent, obj)
+    elseif sym === :sensor
+        return unpack_union(sfSensorEvent, obj)
+    end
 end
 
 # const CSFML_WINDOW_API = CSFML_API_IMPORT

@@ -15,7 +15,10 @@ end
 
 using CEnum
 
-include("ctypes.jl")
+const Ctm = Base.Libc.TmStruct
+const Ctime_t = UInt
+const Cclock_t = UInt
+
 export Ctm, Ctime_t, Cclock_t
 
 include(joinpath(@__DIR__, "config.jl"))

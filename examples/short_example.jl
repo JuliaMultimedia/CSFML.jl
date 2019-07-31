@@ -1,7 +1,6 @@
-# http://transit.iut2.upmf-grenoble.fr/doc/libcsfml-doc/html/
 using CSFML.LibCSFML
 
-mode = sfVideoMode(1250, 1250, 32)
+mode = sfVideoMode(1280, 720, 32)
 
 window = sfRenderWindow_create(mode, "SFML window", sfResize | sfClose, C_NULL)
 @assert window != C_NULL

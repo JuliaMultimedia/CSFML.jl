@@ -1,10 +1,10 @@
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio.h
+# Julia wrapper for header: Audio.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/Export.h
+# Julia wrapper for header: Export.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/Listener.h
+# Julia wrapper for header: Listener.h
 # Automatically generated using Clang.jl
 
 
@@ -39,7 +39,7 @@ end
 function sfListener_getUpVector()
     ccall((:sfListener_getUpVector, libcsfml_audio), sfVector3f, ())
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/Music.h
+# Julia wrapper for header: Music.h
 # Automatically generated using Clang.jl
 
 
@@ -158,7 +158,7 @@ end
 function sfMusic_getAttenuation(music)
     ccall((:sfMusic_getAttenuation, libcsfml_audio), Cfloat, (Ptr{sfMusic},), music)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/Sound.h
+# Julia wrapper for header: Sound.h
 # Automatically generated using Clang.jl
 
 
@@ -261,7 +261,7 @@ end
 function sfSound_getPlayingOffset(sound)
     ccall((:sfSound_getPlayingOffset, libcsfml_audio), sfTime, (Ptr{sfSound},), sound)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/SoundBuffer.h
+# Julia wrapper for header: SoundBuffer.h
 # Automatically generated using Clang.jl
 
 
@@ -312,7 +312,7 @@ end
 function sfSoundBuffer_getDuration(soundBuffer)
     ccall((:sfSoundBuffer_getDuration, libcsfml_audio), sfTime, (Ptr{sfSoundBuffer},), soundBuffer)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/SoundBufferRecorder.h
+# Julia wrapper for header: SoundBufferRecorder.h
 # Automatically generated using Clang.jl
 
 
@@ -347,7 +347,7 @@ end
 function sfSoundBufferRecorder_getDevice(soundBufferRecorder)
     ccall((:sfSoundBufferRecorder_getDevice, libcsfml_audio), Cstring, (Ptr{sfSoundBufferRecorder},), soundBufferRecorder)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/SoundRecorder.h
+# Julia wrapper for header: SoundRecorder.h
 # Automatically generated using Clang.jl
 
 
@@ -402,10 +402,10 @@ end
 function sfSoundRecorder_getChannelCount(soundRecorder)
     ccall((:sfSoundRecorder_getChannelCount, libcsfml_audio), UInt32, (Ptr{sfSoundRecorder},), soundRecorder)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/SoundStatus.h
+# Julia wrapper for header: SoundStatus.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/SoundStream.h
+# Julia wrapper for header: SoundStream.h
 # Automatically generated using Clang.jl
 
 
@@ -504,6 +504,6 @@ end
 function sfSoundStream_getPlayingOffset(soundStream)
     ccall((:sfSoundStream_getPlayingOffset, libcsfml_audio), sfTime, (Ptr{sfSoundStream},), soundStream)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Audio/Types.h
+# Julia wrapper for header: Types.h
 # Automatically generated using Clang.jl
 

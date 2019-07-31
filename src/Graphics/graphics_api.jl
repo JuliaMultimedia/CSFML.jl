@@ -1,10 +1,10 @@
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics.h
+# Julia wrapper for header: Graphics.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/BlendMode.h
+# Julia wrapper for header: BlendMode.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/CircleShape.h
+# Julia wrapper for header: CircleShape.h
 # Automatically generated using Clang.jl
 
 
@@ -139,7 +139,7 @@ end
 function sfCircleShape_getGlobalBounds(shape)
     ccall((:sfCircleShape_getGlobalBounds, libcsfml_graphics), sfFloatRect, (Ptr{sfCircleShape},), shape)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Color.h
+# Julia wrapper for header: Color.h
 # Automatically generated using Clang.jl
 
 
@@ -170,7 +170,7 @@ end
 function sfColor_modulate(color1, color2)
     ccall((:sfColor_modulate, libcsfml_graphics), sfColor, (sfColor, sfColor), color1, color2)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/ConvexShape.h
+# Julia wrapper for header: ConvexShape.h
 # Automatically generated using Clang.jl
 
 
@@ -301,10 +301,10 @@ end
 function sfConvexShape_getGlobalBounds(shape)
     ccall((:sfConvexShape_getGlobalBounds, libcsfml_graphics), sfFloatRect, (Ptr{sfConvexShape},), shape)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Export.h
+# Julia wrapper for header: Export.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Font.h
+# Julia wrapper for header: Font.h
 # Automatically generated using Clang.jl
 
 
@@ -355,16 +355,16 @@ end
 function sfFont_getInfo(font)
     ccall((:sfFont_getInfo, libcsfml_graphics), sfFontInfo, (Ptr{sfFont},), font)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/FontInfo.h
+# Julia wrapper for header: FontInfo.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Glsl.h
+# Julia wrapper for header: Glsl.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Glyph.h
+# Julia wrapper for header: Glyph.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Image.h
+# Julia wrapper for header: Image.h
 # Automatically generated using Clang.jl
 
 
@@ -435,10 +435,10 @@ end
 function sfImage_flipVertically(image)
     ccall((:sfImage_flipVertically, libcsfml_graphics), Cvoid, (Ptr{sfImage},), image)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/PrimitiveType.h
+# Julia wrapper for header: PrimitiveType.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Rect.h
+# Julia wrapper for header: Rect.h
 # Automatically generated using Clang.jl
 
 
@@ -457,7 +457,7 @@ end
 function sfIntRect_intersects(rect1, rect2, intersection)
     ccall((:sfIntRect_intersects, libcsfml_graphics), sfBool, (Ptr{sfIntRect}, Ptr{sfIntRect}, Ptr{sfIntRect}), rect1, rect2, intersection)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/RectangleShape.h
+# Julia wrapper for header: RectangleShape.h
 # Automatically generated using Clang.jl
 
 
@@ -588,10 +588,10 @@ end
 function sfRectangleShape_getGlobalBounds(shape)
     ccall((:sfRectangleShape_getGlobalBounds, libcsfml_graphics), sfFloatRect, (Ptr{sfRectangleShape},), shape)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/RenderStates.h
+# Julia wrapper for header: RenderStates.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/RenderTexture.h
+# Julia wrapper for header: RenderTexture.h
 # Automatically generated using Clang.jl
 
 
@@ -722,7 +722,7 @@ end
 function sfRenderTexture_generateMipmap(renderTexture)
     ccall((:sfRenderTexture_generateMipmap, libcsfml_graphics), sfBool, (Ptr{sfRenderTexture},), renderTexture)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/RenderWindow.h
+# Julia wrapper for header: RenderWindow.h
 # Automatically generated using Clang.jl
 
 
@@ -933,7 +933,7 @@ end
 function sfTouch_getPositionRenderWindow(finger, relativeTo)
     ccall((:sfTouch_getPositionRenderWindow, libcsfml_graphics), sfVector2i, (UInt32, Ptr{sfRenderWindow}), finger, relativeTo)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Shader.h
+# Julia wrapper for header: Shader.h
 # Automatically generated using Clang.jl
 
 
@@ -1104,7 +1104,7 @@ end
 function sfShader_isGeometryAvailable()
     ccall((:sfShader_isGeometryAvailable, libcsfml_graphics), sfBool, ())
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Shape.h
+# Julia wrapper for header: Shape.h
 # Automatically generated using Clang.jl
 
 
@@ -1227,7 +1227,7 @@ end
 function sfShape_update(shape)
     ccall((:sfShape_update, libcsfml_graphics), Cvoid, (Ptr{sfShape},), shape)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Sprite.h
+# Julia wrapper for header: Sprite.h
 # Automatically generated using Clang.jl
 
 
@@ -1326,7 +1326,7 @@ end
 function sfSprite_getGlobalBounds(sprite)
     ccall((:sfSprite_getGlobalBounds, libcsfml_graphics), sfFloatRect, (Ptr{sfSprite},), sprite)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Text.h
+# Julia wrapper for header: Text.h
 # Automatically generated using Clang.jl
 
 
@@ -1493,7 +1493,7 @@ end
 function sfText_getGlobalBounds(text)
     ccall((:sfText_getGlobalBounds, libcsfml_graphics), sfFloatRect, (Ptr{sfText},), text)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Texture.h
+# Julia wrapper for header: Texture.h
 # Automatically generated using Clang.jl
 
 
@@ -1596,7 +1596,7 @@ end
 function sfTexture_getMaximumSize()
     ccall((:sfTexture_getMaximumSize, libcsfml_graphics), UInt32, ())
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Transform.h
+# Julia wrapper for header: Transform.h
 # Automatically generated using Clang.jl
 
 
@@ -1647,7 +1647,7 @@ end
 function sfTransform_equal(left, right)
     ccall((:sfTransform_equal, libcsfml_graphics), sfBool, (Ptr{sfTransform}, Ptr{sfTransform}), left, right)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Transformable.h
+# Julia wrapper for header: Transformable.h
 # Automatically generated using Clang.jl
 
 
@@ -1714,13 +1714,13 @@ end
 function sfTransformable_getInverseTransform(transformable)
     ccall((:sfTransformable_getInverseTransform, libcsfml_graphics), sfTransform, (Ptr{sfTransformable},), transformable)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Types.h
+# Julia wrapper for header: Types.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/Vertex.h
+# Julia wrapper for header: Vertex.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/VertexArray.h
+# Julia wrapper for header: VertexArray.h
 # Automatically generated using Clang.jl
 
 
@@ -1767,7 +1767,7 @@ end
 function sfVertexArray_getBounds(vertexArray)
     ccall((:sfVertexArray_getBounds, libcsfml_graphics), sfFloatRect, (Ptr{sfVertexArray},), vertexArray)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/VertexBuffer.h
+# Julia wrapper for header: VertexBuffer.h
 # Automatically generated using Clang.jl
 
 
@@ -1826,7 +1826,7 @@ end
 function sfVertexBuffer_isAvailable()
     ccall((:sfVertexBuffer_isAvailable, libcsfml_graphics), sfBool, ())
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Graphics/View.h
+# Julia wrapper for header: View.h
 # Automatically generated using Clang.jl
 
 

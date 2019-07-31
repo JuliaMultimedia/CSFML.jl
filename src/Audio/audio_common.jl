@@ -12,11 +12,12 @@ const sfSoundRecorderStartCallback = Ptr{Cvoid}
 const sfSoundRecorderProcessCallback = Ptr{Cvoid}
 const sfSoundRecorderStopCallback = Ptr{Cvoid}
 
-@cenum(sfSoundStatus,
-    sfStopped = 0,
-    sfPaused = 1,
-    sfPlaying = 2,
-)
+@cenum sfSoundStatus::UInt32 begin
+    sfStopped = 0
+    sfPaused = 1
+    sfPlaying = 2
+end
+
 
 struct sfSoundStreamChunk
     samples::Ptr{sfInt16}

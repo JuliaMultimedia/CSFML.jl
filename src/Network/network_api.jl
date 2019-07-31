@@ -1,10 +1,10 @@
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network.h
+# Julia wrapper for header: Network.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/Export.h
+# Julia wrapper for header: Export.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/Ftp.h
+# Julia wrapper for header: Ftp.h
 # Automatically generated using Clang.jl
 
 
@@ -139,7 +139,7 @@ end
 function sfFtp_sendCommand(ftp, command, parameter)
     ccall((:sfFtp_sendCommand, libcsfml_network), Ptr{sfFtpResponse}, (Ptr{sfFtp}, Cstring, Cstring), ftp, command, parameter)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/Http.h
+# Julia wrapper for header: Http.h
 # Automatically generated using Clang.jl
 
 
@@ -210,7 +210,7 @@ end
 function sfHttp_sendRequest(http, request, timeout)
     ccall((:sfHttp_sendRequest, libcsfml_network), Ptr{sfHttpResponse}, (Ptr{sfHttp}, Ptr{sfHttpRequest}, sfTime), http, request, timeout)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/IpAddress.h
+# Julia wrapper for header: IpAddress.h
 # Automatically generated using Clang.jl
 
 
@@ -241,7 +241,7 @@ end
 function sfIpAddress_getPublicAddress(timeout)
     ccall((:sfIpAddress_getPublicAddress, libcsfml_network), sfIpAddress, (sfTime,), timeout)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/Packet.h
+# Julia wrapper for header: Packet.h
 # Automatically generated using Clang.jl
 
 
@@ -368,7 +368,7 @@ end
 function sfPacket_writeWideString(packet, string)
     ccall((:sfPacket_writeWideString, libcsfml_network), Cvoid, (Ptr{sfPacket}, Ptr{Cwchar_t}), packet, string)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/SocketSelector.h
+# Julia wrapper for header: SocketSelector.h
 # Automatically generated using Clang.jl
 
 
@@ -427,10 +427,10 @@ end
 function sfSocketSelector_isUdpSocketReady(selector, socket)
     ccall((:sfSocketSelector_isUdpSocketReady, libcsfml_network), sfBool, (Ptr{sfSocketSelector}, Ptr{sfUdpSocket}), selector, socket)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/SocketStatus.h
+# Julia wrapper for header: SocketStatus.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/TcpListener.h
+# Julia wrapper for header: TcpListener.h
 # Automatically generated using Clang.jl
 
 
@@ -461,7 +461,7 @@ end
 function sfTcpListener_accept(listener, connected)
     ccall((:sfTcpListener_accept, libcsfml_network), sfSocketStatus, (Ptr{sfTcpListener}, Ptr{Ptr{sfTcpSocket}}), listener, connected)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/TcpSocket.h
+# Julia wrapper for header: TcpSocket.h
 # Automatically generated using Clang.jl
 
 
@@ -520,10 +520,10 @@ end
 function sfTcpSocket_receivePacket(socket, packet)
     ccall((:sfTcpSocket_receivePacket, libcsfml_network), sfSocketStatus, (Ptr{sfTcpSocket}, Ptr{sfPacket}), socket, packet)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/Types.h
+# Julia wrapper for header: Types.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/Network/UdpSocket.h
+# Julia wrapper for header: UdpSocket.h
 # Automatically generated using Clang.jl
 
 

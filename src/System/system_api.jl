@@ -1,7 +1,7 @@
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System.h
+# Julia wrapper for header: System.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/Clock.h
+# Julia wrapper for header: Clock.h
 # Automatically generated using Clang.jl
 
 
@@ -24,13 +24,13 @@ end
 function sfClock_restart(clock)
     ccall((:sfClock_restart, libcsfml_system), sfTime, (Ptr{sfClock},), clock)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/Export.h
+# Julia wrapper for header: Export.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/InputStream.h
+# Julia wrapper for header: InputStream.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/Mutex.h
+# Julia wrapper for header: Mutex.h
 # Automatically generated using Clang.jl
 
 
@@ -49,14 +49,14 @@ end
 function sfMutex_unlock(mutex)
     ccall((:sfMutex_unlock, libcsfml_system), Cvoid, (Ptr{sfMutex},), mutex)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/Sleep.h
+# Julia wrapper for header: Sleep.h
 # Automatically generated using Clang.jl
 
 
 function sfSleep(duration)
     ccall((:sfSleep, libcsfml_system), Cvoid, (sfTime,), duration)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/Thread.h
+# Julia wrapper for header: Thread.h
 # Automatically generated using Clang.jl
 
 
@@ -79,7 +79,7 @@ end
 function sfThread_terminate(thread)
     ccall((:sfThread_terminate, libcsfml_system), Cvoid, (Ptr{sfThread},), thread)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/Time.h
+# Julia wrapper for header: Time.h
 # Automatically generated using Clang.jl
 
 
@@ -106,12 +106,12 @@ end
 function sfMicroseconds(amount)
     ccall((:sfMicroseconds, libcsfml_system), sfTime, (sfInt64,), amount)
 end
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/Types.h
+# Julia wrapper for header: Types.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/Vector2.h
+# Julia wrapper for header: Vector2.h
 # Automatically generated using Clang.jl
 
-# Julia wrapper for header: /Users/gnimuc/LibCSFML/gen/../deps/usr/include/SFML/System/Vector3.h
+# Julia wrapper for header: Vector3.h
 # Automatically generated using Clang.jl
 

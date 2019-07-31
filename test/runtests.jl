@@ -1,6 +1,4 @@
-using CSFML
+using CSFML.LibCSFML
 using Test
 
-@testset "CSFML.jl" begin
-    # Write your own tests here.
-end
+mode = sfVideoMode(1280, 720, 32)

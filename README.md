@@ -53,7 +53,7 @@ music = sfMusic_createFromFile(joinpath(@__DIR__, "Chrono_Trigger.ogg"))
 
 sfMusic_play(music)
 
-event_ref = Ref(sfEvent(sfEvtClosed))
+event_ref = Ref{sfEvent}()
 
 while Bool(sfRenderWindow_isOpen(window))
     # process events

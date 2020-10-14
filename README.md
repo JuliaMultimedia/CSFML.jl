@@ -10,15 +10,8 @@ pkg> add CSFML
 ```
 On Linux, you might need to install the following dependencies firstly:
 
-- openal
-- pthread
-- opengl
-- xlib
-- xrandr
-- udev
-- freetype
-- flac
-- vorbis
+- xorg-dev
+- libopenal-dev
 
 Should you encountered any installation problems, feel free to file an issue.
 

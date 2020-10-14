@@ -1,17 +1,6 @@
 module LibCSFML
 
-import Libdl
-
-# Load in `deps.jl`, complaining if it does not exist
-const depsjl_path = joinpath(@__DIR__, "..", "deps", "deps.jl")
-if !isfile(depsjl_path)
-    error("CSFML was not built properly. Please run Pkg.build(\"CSFML\").")
-end
-include(depsjl_path)
-# Module initialization function
-function __init__()
-    check_deps()
-end
+using CSFML_jll
 
 using CEnum
 

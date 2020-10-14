@@ -193,6 +193,13 @@ struct sfMouseButtonEvent
     y::Cint
 end
 
+struct sfMouseWheelEvent
+    type::sfEventType
+    delta::Cint
+    x::Cint
+    y::Cint
+end
+
 @cenum sfMouseWheel::UInt32 begin
     sfMouseVerticalWheel = 0
     sfMouseHorizontalWheel = 1

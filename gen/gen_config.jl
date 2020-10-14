@@ -1,13 +1,17 @@
 using Clang
+using CSFML
+using CSFML.LibCSFML.CSFML_jll
 
-const SFML_INCLUDE = joinpath(@__DIR__, "..", "deps", "usr", "include")
+const SFML_INCLUDE = joinpath(dirname(CSFML_jll.libcsfml_window_path), "..", "include") |> normpath
 const CONFIG_H = joinpath(SFML_INCLUDE, "SFML", "Config.h")
 
 # create a work context
 ctx = DefaultContext()
 
 # parse headers
-parse_headers!(ctx, [CONFIG_H], includes=[SFML_INCLUDE, CLANG_INCLUDE])
+parse_headers!(ctx, [CONFIG_H], 
+               args=[map(x->"-I"*x, find_std_headers())...],
+               includes=[SFML_INCLUDE, CLANG_INCLUDE])
 
 # settings
 ctx.options["is_struct_mutable"] = false  # for nested struct

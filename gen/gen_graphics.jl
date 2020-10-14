@@ -1,6 +1,8 @@
 using Clang
+using CSFML
+using CSFML.LibCSFML.CSFML_jll
 
-const SFML_INCLUDE = joinpath(@__DIR__, "..", "deps", "usr", "include")
+const SFML_INCLUDE = joinpath(dirname(CSFML_jll.libcsfml_window_path), "..", "include") |> normpath
 const GRAPHICS_DIR = joinpath(SFML_INCLUDE, "SFML", "Graphics")
 const GRAPHICS_HEADERS = [joinpath(GRAPHICS_DIR, header) for header in readdir(GRAPHICS_DIR) if endswith(header, ".h")]
 const GRAPHICS_H = joinpath(SFML_INCLUDE, "SFML", "Graphics.h")
@@ -9,7 +11,9 @@ const GRAPHICS_H = joinpath(SFML_INCLUDE, "SFML", "Graphics.h")
 ctx = DefaultContext()
 
 # parse headers
-parse_headers!(ctx, [GRAPHICS_H, GRAPHICS_HEADERS...], includes=[SFML_INCLUDE, CLANG_INCLUDE])
+parse_headers!(ctx, [GRAPHICS_H, GRAPHICS_HEADERS...],
+               args=[map(x->"-I"*x, find_std_headers())...],
+               includes=[SFML_INCLUDE, CLANG_INCLUDE])
 
 # settings
 ctx.libname = "libcsfml_graphics"

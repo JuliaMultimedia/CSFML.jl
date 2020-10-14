@@ -1,15 +1,19 @@
 using Clang
+using CSFML
+using CSFML.LibCSFML.CSFML_jll
 
-const SFML_INCLUDE = joinpath(@__DIR__, "..", "deps", "usr", "include")
-const GRAPHICS_DIR = joinpath(SFML_INCLUDE, "SFML", "System")
-const GRAPHICS_HEADERS = [joinpath(GRAPHICS_DIR, header) for header in readdir(GRAPHICS_DIR) if endswith(header, ".h")]
-const GRAPHICS_H = joinpath(SFML_INCLUDE, "SFML", "System.h")
+const SFML_INCLUDE = joinpath(dirname(CSFML_jll.libcsfml_window_path), "..", "include") |> normpath
+const SYSTEM_DIR = joinpath(SFML_INCLUDE, "SFML", "System")
+const SYSTEM_HEADERS = [joinpath(SYSTEM_DIR, header) for header in readdir(SYSTEM_DIR) if endswith(header, ".h")]
+const SYSTEM_H = joinpath(SFML_INCLUDE, "SFML", "System.h")
 
 # create a work context
 ctx = DefaultContext()
 
 # parse headers
-parse_headers!(ctx, [GRAPHICS_H, GRAPHICS_HEADERS...], includes=[SFML_INCLUDE, CLANG_INCLUDE])
+parse_headers!(ctx, [SYSTEM_H, SYSTEM_HEADERS...],
+               args=[map(x->"-I"*x, find_std_headers())...],
+               includes=[SFML_INCLUDE, CLANG_INCLUDE])
 
 # settings
 ctx.libname = "libcsfml_system"

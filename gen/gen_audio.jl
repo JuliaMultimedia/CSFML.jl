@@ -1,15 +1,19 @@
 using Clang
+using CSFML
+using CSFML.LibCSFML.CSFML_jll
 
-const SFML_INCLUDE = joinpath(@__DIR__, "..", "deps", "usr", "include")
-const GRAPHICS_DIR = joinpath(SFML_INCLUDE, "SFML", "Audio")
-const GRAPHICS_HEADERS = [joinpath(GRAPHICS_DIR, header) for header in readdir(GRAPHICS_DIR) if endswith(header, ".h")]
-const GRAPHICS_H = joinpath(SFML_INCLUDE, "SFML", "Audio.h")
+const SFML_INCLUDE = joinpath(dirname(CSFML_jll.libcsfml_window_path), "..", "include") |> normpath
+const AUDIO_DIR = joinpath(SFML_INCLUDE, "SFML", "Audio")
+const AUDIO_HEADERS = [joinpath(AUDIO_DIR, header) for header in readdir(AUDIO_DIR) if endswith(header, ".h")]
+const AUDIO_H = joinpath(SFML_INCLUDE, "SFML", "Audio.h")
 
 # create a work context
 ctx = DefaultContext()
 
 # parse headers
-parse_headers!(ctx, [GRAPHICS_H, GRAPHICS_HEADERS...], includes=[SFML_INCLUDE, CLANG_INCLUDE])
+parse_headers!(ctx, [AUDIO_H, AUDIO_HEADERS...], 
+               args=[map(x->"-I"*x, find_std_headers())...],
+               includes=[SFML_INCLUDE, CLANG_INCLUDE])
 
 # settings
 ctx.libname = "libcsfml_audio"

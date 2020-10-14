@@ -22,11 +22,3 @@ notifications:
   email: false
 after_success:
   - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
-
-julia:
-  - 1.5
-  - nightly
-matrix:
-  allow_failures:
-    - julia: nightly
-  fast_finish: true

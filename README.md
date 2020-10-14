@@ -18,6 +18,7 @@ Should you encountered any installation problems, feel free to file an issue.
 ## Quick start
 
 ```julia
+using CSFML
 using CSFML.LibCSFML
 
 mode = sfVideoMode(1280, 720, 32)
@@ -25,13 +26,13 @@ mode = sfVideoMode(1280, 720, 32)
 window = sfRenderWindow_create(mode, "SFML window", sfResize | sfClose, C_NULL)
 @assert window != C_NULL
 
-texture = sfTexture_createFromFile(joinpath(@__DIR__, "julia-tan.png"), C_NULL)
+texture = sfTexture_createFromFile(joinpath(dirname(pathof(CSFML)), "..", "examples", "julia-tan.png"), C_NULL)
 @assert texture != C_NULL
 
 sprite = sfSprite_create()
 sfSprite_setTexture(sprite, texture, sfTrue)
 
-font = sfFont_createFromFile(joinpath(@__DIR__, "Roboto-Bold.ttf"))
+font = sfFont_createFromFile(joinpath(dirname(pathof(CSFML)), "..", "examples", "Roboto-Bold.ttf"))
 @assert font != C_NULL
 
 text = sfText_create()
@@ -39,7 +40,7 @@ sfText_setString(text, "Hello SFML")
 sfText_setFont(text, font)
 sfText_setCharacterSize(text, 50)
 
-music = sfMusic_createFromFile(joinpath(@__DIR__, "Chrono_Trigger.ogg"))
+music = sfMusic_createFromFile(joinpath(dirname(pathof(CSFML)), "..", "examples", "Chrono_Trigger.ogg"))
 @assert music != C_NULL
 
 sfMusic_play(music)

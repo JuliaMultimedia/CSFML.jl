@@ -1,0 +1,9 @@
+[general]
+library_name = "libcimgui"
+output_file_path = "./src/LibCSFML.jl"
+module_name = "LibCSFML"
+jll_pkg_name = "CSFML_jll"
+export_symbol_prefixes = ["sf"]
+
+[codegen.macro]
+macro_mode = "none"

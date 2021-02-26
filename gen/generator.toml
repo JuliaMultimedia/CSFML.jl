@@ -1,5 +1,5 @@
 [general]
-library_name = "libcimgui"
+library_name = "libcsfml"
 output_file_path = "./src/LibCSFML.jl"
 module_name = "LibCSFML"
 jll_pkg_name = "CSFML_jll"

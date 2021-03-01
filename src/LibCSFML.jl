@@ -720,7 +720,7 @@ struct sfJoystickIdentification
     productId::Cuint
 end
 
-@cenum var"##Ctag#376"::UInt32 begin
+@cenum var"##Ctag#267"::UInt32 begin
     sfJoystickCount = 8
     sfJoystickButtonCount = 32
     sfJoystickAxisCount = 8
@@ -1042,6 +1042,33 @@ end
 
 struct sfEvent
     data::NTuple{24, UInt8}
+end
+
+function Base.getproperty(x::Ptr{sfEvent}, f::Symbol)
+    f === :type && return Ptr{sfEventType}(x + 0)
+    f === :size && return Ptr{sfSizeEvent}(x + 0)
+    f === :key && return Ptr{sfKeyEvent}(x + 0)
+    f === :text && return Ptr{sfTextEvent}(x + 0)
+    f === :mouseMove && return Ptr{sfMouseMoveEvent}(x + 0)
+    f === :mouseButton && return Ptr{sfMouseButtonEvent}(x + 0)
+    f === :mouseWheel && return Ptr{sfMouseWheelEvent}(x + 0)
+    f === :mouseWheelScroll && return Ptr{sfMouseWheelScrollEvent}(x + 0)
+    f === :joystickMove && return Ptr{sfJoystickMoveEvent}(x + 0)
+    f === :joystickButton && return Ptr{sfJoystickButtonEvent}(x + 0)
+    f === :joystickConnect && return Ptr{sfJoystickConnectEvent}(x + 0)
+    f === :touch && return Ptr{sfTouchEvent}(x + 0)
+    f === :sensor && return Ptr{sfSensorEvent}(x + 0)
+    return getfield(x, f)
+end
+
+function Base.getproperty(x::sfEvent, f::Symbol)
+    r = Ref{sfEvent}(x)
+    ptr = Base.unsafe_convert(sfEvent, r)
+    GC.@preserve r unsafe_load(getproperty(ptr, f))
+end
+
+function Base.setproperty!(x::Ptr{sfEvent}, f::Symbol, v)
+    unsafe_store!(getproperty(x, f), v)
 end
 
 struct sfVideoMode

@@ -29,19 +29,23 @@ try
     while Bool(sfRenderWindow_isOpen(window))
         # process events
         while Bool(sfRenderWindow_pollEvent(window, event_ref))
+            event_ptr = Base.unsafe_convert(Ptr{sfEvent}, event_ref)
             # close window : exit
-            event_ref[].type == sfEvtClosed && sfRenderWindow_close(window)
-            event_ref[].type == sfEvtResized && println("Trigger sfEvtResized.")
-            event_ref[].type == sfEvtLostFocus && println("Trigger sfEvtLostFocus.")
-            event_ref[].type == sfEvtGainedFocus && println("Trigger sfEvtGainedFocus.")
-            event_ref[].type == sfEvtTextEntered && println("Trigger sfEvtTextEntered: $(event_ref[].text.unicode)")
-            event_ref[].type == sfEvtKeyPressed && println("Trigger sfEvtKeyPressed: $(event_ref[].key.code)")
-            event_ref[].type == sfEvtKeyReleased && println("Trigger sfEvtKeyReleased: $(event_ref[].key.code)")
-            event_ref[].type == sfEvtMouseWheelMoved && println("Trigger sfEvtMouseWheelMoved: $(event_ref[].mouseWheel.x), $(event_ref[].mouseWheel.y)")
-            event_ref[].type == sfEvtMouseWheelScrolled && println("Trigger sfEvtMouseWheelScrolled: $(event_ref[].mouseWheelScroll.wheel)")
-            event_ref[].type == sfEvtMouseButtonPressed && println("Trigger sfEvtMouseButtonPressed: $(event_ref[].mouseButton.button)")
-            event_ref[].type == sfEvtMouseButtonReleased && println("Trigger sfEvtMouseButtonReleased: $(event_ref[].mouseButton.x), $(event_ref[].mouseButton.y)")
-            event_ref[].type == sfEvtMouseMoved && println("Trigger sfEvtMouseMoved: $(event_ref[].mouseMove.x), $(event_ref[].mouseMove.y)")
+            GC.@preserve event_ref begin
+                ty = unsafe_load(event_ptr.type)
+                ty == sfEvtClosed && sfRenderWindow_close(window)
+                ty == sfEvtResized && println("Trigger sfEvtResized.")
+                ty == sfEvtLostFocus && println("Trigger sfEvtLostFocus.")
+                ty == sfEvtGainedFocus && println("Trigger sfEvtGainedFocus.")
+                ty == sfEvtTextEntered && println("Trigger sfEvtTextEntered: $(unsafe_load(event_ptr.text).unicode)")
+                ty == sfEvtKeyPressed && println("Trigger sfEvtKeyPressed: $(unsafe_load(event_ptr.key).code)")
+                ty == sfEvtKeyReleased && println("Trigger sfEvtKeyReleased: $(unsafe_load(event_ptr.key).code)")
+                ty == sfEvtMouseWheelMoved && println("Trigger sfEvtMouseWheelMoved: $(unsafe_load(event_ptr.mouseWheel).x), $(unsafe_load(event_ptr.mouseWheel).y)")
+                ty == sfEvtMouseWheelScrolled && println("Trigger sfEvtMouseWheelScrolled: $(unsafe_load(event_ptr.mouseWheelScroll).wheel)")
+                ty == sfEvtMouseButtonPressed && println("Trigger sfEvtMouseButtonPressed: $(unsafe_load(event_ptr.mouseButton).button)")
+                ty == sfEvtMouseButtonReleased && println("Trigger sfEvtMouseButtonReleased: $(unsafe_load(event_ptr.mouseButton).x), $(unsafe_load(event_ptr.mouseButton).y)")
+                ty == sfEvtMouseMoved && println("Trigger sfEvtMouseMoved: $(unsafe_load(event_ptr.mouseMove).x), $(unsafe_load(event_ptr.mouseMove).y)")
+            end
         end
         # clear the screen
         sfRenderWindow_clear(window, sfColor_fromRGBA(0,0,0,1))

@@ -720,7 +720,7 @@ struct sfJoystickIdentification
     productId::Cuint
 end
 
-@cenum var"##Ctag#267"::UInt32 begin
+@cenum var"##Ctag#488"::UInt32 begin
     sfJoystickCount = 8
     sfJoystickButtonCount = 32
     sfJoystickAxisCount = 8
@@ -1063,8 +1063,9 @@ end
 
 function Base.getproperty(x::sfEvent, f::Symbol)
     r = Ref{sfEvent}(x)
-    ptr = Base.unsafe_convert(sfEvent, r)
-    GC.@preserve r unsafe_load(getproperty(ptr, f))
+    ptr = Base.unsafe_convert(Ptr{sfEvent}, r)
+    fptr = getproperty(ptr, f)
+    GC.@preserve r unsafe_load(fptr)
 end
 
 function Base.setproperty!(x::Ptr{sfEvent}, f::Symbol, v)
@@ -3957,6 +3958,26 @@ end
 function sfUdpSocket_maxDatagramSize()
     ccall((:sfUdpSocket_maxDatagramSize, libcsfml_network), Cuint, ())
 end
+
+const CSFML_VERSION_MAJOR = 2
+
+const CSFML_VERSION_MINOR = 5
+
+const CSFML_VERSION_PATCH = 0
+
+# Skipping MacroDefinition: CSFML_EXTERN_C extern
+
+const CSFML_SYSTEM_MACOS = nothing
+
+# Skipping MacroDefinition: CSFML_API_EXPORT extern "C" __attribute__ ( ( __visibility__ ( "default" ) ) )
+
+# Skipping MacroDefinition: CSFML_API_IMPORT CSFML_EXTERN_C __attribute__ ( ( __visibility__ ( "default" ) ) )
+
+# Skipping MacroDefinition: CSFML_DEPRECATED __attribute__ ( ( deprecated ) )
+
+const sfFalse = 0
+
+const sfTrue = 1
 
 # exports
 const PREFIXES = ["sf"]

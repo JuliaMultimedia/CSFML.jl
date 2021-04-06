@@ -5,5 +5,13 @@ module_name = "LibCSFML"
 jll_pkg_name = "CSFML_jll"
 export_symbol_prefixes = ["sf"]
 
+printer_blacklist = [
+    "CSFML_SYSTEM_API",
+    "CSFML_AUDIO_API",
+    "CSFML_WINDOW_API",
+    "CSFML_GRAPHICS_API",
+    "CSFML_NETWORK_API",
+]
+
 [codegen.macro]
-macro_mode = "none"
+macro_mode = "basic"

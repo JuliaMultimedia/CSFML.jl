@@ -1,6 +1,7 @@
 [general]
 library_name = "libcsfml"
-output_file_path = "./src/LibCSFML.jl"
+library_names = {"Audio/.*.h" = "libcsfml_audio", "Graphics/.*.h" = "libcsfml_graphics", "Network/.*.h" = "libcsfml_network", "System/.*.h" = "libcsfml_system", "Window/.*.h" = "libcsfml_window"}
+output_file_path = "../src/LibCSFML.jl"
 module_name = "LibCSFML"
 jll_pkg_name = "CSFML_jll"
 export_symbol_prefixes = ["sf"]

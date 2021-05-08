@@ -77,19 +77,15 @@ function sfClock_restart(clock)
     ccall((:sfClock_restart, libcsfml_system), sfTime, (Ptr{sfClock},), clock)
 end
 
-# C code:
 # typedef sfInt64 ( * sfInputStreamReadFunc ) ( void * data , sfInt64 size , void * userData )
 const sfInputStreamReadFunc = Ptr{Cvoid}
 
-# C code:
 # typedef sfInt64 ( * sfInputStreamSeekFunc ) ( sfInt64 position , void * userData )
 const sfInputStreamSeekFunc = Ptr{Cvoid}
 
-# C code:
 # typedef sfInt64 ( * sfInputStreamTellFunc ) ( void * userData )
 const sfInputStreamTellFunc = Ptr{Cvoid}
 
-# C code:
 # typedef sfInt64 ( * sfInputStreamGetSizeFunc ) ( void * userData )
 const sfInputStreamGetSizeFunc = Ptr{Cvoid}
 
@@ -516,15 +512,12 @@ function sfSoundBufferRecorder_getDevice(soundBufferRecorder)
     ccall((:sfSoundBufferRecorder_getDevice, libcsfml_audio), Ptr{Cchar}, (Ptr{sfSoundBufferRecorder},), soundBufferRecorder)
 end
 
-# C code:
 # typedef sfBool ( * sfSoundRecorderStartCallback ) ( void * )
 const sfSoundRecorderStartCallback = Ptr{Cvoid}
 
-# C code:
 # typedef sfBool ( * sfSoundRecorderProcessCallback ) ( const sfInt16 * , size_t , void * )
 const sfSoundRecorderProcessCallback = Ptr{Cvoid}
 
-# C code:
 # typedef void ( * sfSoundRecorderStopCallback ) ( void * )
 const sfSoundRecorderStopCallback = Ptr{Cvoid}
 
@@ -586,11 +579,9 @@ struct sfSoundStreamChunk
     sampleCount::Cuint
 end
 
-# C code:
 # typedef sfBool ( * sfSoundStreamGetDataCallback ) ( sfSoundStreamChunk * , void * )
 const sfSoundStreamGetDataCallback = Ptr{Cvoid}
 
-# C code:
 # typedef void ( * sfSoundStreamSeekCallback ) ( sfTime , void * )
 const sfSoundStreamSeekCallback = Ptr{Cvoid}
 
@@ -720,7 +711,7 @@ struct sfJoystickIdentification
     productId::Cuint
 end
 
-@cenum var"##Ctag#488"::UInt32 begin
+@cenum var"##Ctag#953"::UInt32 begin
     sfJoystickCount = 8
     sfJoystickButtonCount = 32
     sfJoystickAxisCount = 8
@@ -2564,11 +2555,9 @@ function sfShader_isGeometryAvailable()
     ccall((:sfShader_isGeometryAvailable, libcsfml_graphics), sfBool, ())
 end
 
-# C code:
 # typedef size_t ( * sfShapeGetPointCountCallback ) ( void * )
 const sfShapeGetPointCountCallback = Ptr{Cvoid}
 
-# C code:
 # typedef sfVector2f ( * sfShapeGetPointCallback ) ( size_t , void * )
 const sfShapeGetPointCallback = Ptr{Cvoid}
 
@@ -3967,8 +3956,6 @@ const CSFML_VERSION_PATCH = 0
 
 # Skipping MacroDefinition: CSFML_EXTERN_C extern
 
-const CSFML_SYSTEM_MACOS = nothing
-
 # Skipping MacroDefinition: CSFML_API_EXPORT extern "C" __attribute__ ( ( __visibility__ ( "default" ) ) )
 
 # Skipping MacroDefinition: CSFML_API_IMPORT CSFML_EXTERN_C __attribute__ ( ( __visibility__ ( "default" ) ) )
@@ -3981,11 +3968,9 @@ const sfTrue = 1
 
 # exports
 const PREFIXES = ["sf"]
-foreach(names(@__MODULE__; all=true)) do s
-    for prefix in PREFIXES
-        if startswith(string(s), prefix)
-            @eval export $s
-        end
+for name in names(@__MODULE__; all=true), prefix in PREFIXES
+    if startswith(string(name), prefix)
+        @eval export $name
     end
 end
 

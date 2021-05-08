@@ -1,17 +1,16 @@
 name = "CSFML"
 uuid = "538df835-4bef-5bfa-b281-4025a4f7e8ff"
-authors = ["Gnimuc <qiyupei@gmail.com>"]
-version = "0.2.0"
+authors = ["Yupei Qi <qiyupei@gmail.com>"]
+version = "0.3.0"
 
 [deps]
 CEnum = "fa961155-64e5-5f13-b03f-caf6b980ea82"
 CSFML_jll = "042b324c-54b6-5061-9eb0-54e31a36d6ad"
-Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
 
 [compat]
-CSFML_jll = "2.5"
 CEnum = "0.4"
-julia = "1.3"
+CSFML_jll = "2.5"
+julia = "1.6"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

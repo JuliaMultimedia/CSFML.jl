@@ -1,19 +1,15 @@
 # CSFML
 
-[![Build Status](https://travis-ci.com/JuliaMultimedia/CSFML.jl.svg?branch=master)](https://travis-ci.com/JuliaMultimedia/CSFML.jl)
+[![CI](https://github.com/JuliaMultimedia/CSFML.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/JuliaMultimedia/CSFML.jl/actions/workflows/ci.yml)
+[![TagBot](https://github.com/JuliaMultimedia/CSFML.jl/actions/workflows/TagBot.yml/badge.svg)](https://github.com/JuliaMultimedia/CSFML.jl/actions/workflows/TagBot.yml)
+[![codecov](https://codecov.io/gh/JuliaMultimedia/CSFML.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/JuliaMultimedia/CSFML.jl)
 
-Julia wrapper for [CSFML](https://github.com/SFML/CSFML), the official binding of [SFML](https://github.com/SFML/SFML) for C. SFML is a simple, fast, cross-platform and object-oriented multimedia API. It provides access to windowing, graphics, audio and network. The Julia bindings in this repo are auto-generated using [Clang.jl](https://github.com/JuliaInterop/Clang.jl). You could refer to CSFML's repo for how to use those bindings.
+Julia wrapper for [CSFML](https://github.com/SFML/CSFML), the official binding of [SFML](https://github.com/SFML/SFML) for C. SFML is a simple, fast, cross-platform and object-oriented multimedia API. It provides access to windowing, graphics, audio and network. The Julia bindings in this repo are auto-generated using [Clang.jl](https://github.com/JuliaInterop/Clang.jl).
 
 ## Installation
 ```julia
 pkg> add CSFML
 ```
-On Linux, you might need to install the following dependencies firstly:
-
-- xorg-dev
-- libopenal-dev
-
-Should you encountered any installation problems, feel free to file an issue.
 
 ## Quick start
 
